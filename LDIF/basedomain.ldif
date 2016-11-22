@@ -1,0 +1,46 @@
+dn: dc=annmoon,dc=com
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: annmoon
+dc: annmoon
+
+dn: cn=Manager,dc=annmoon,dc=com
+objectClass: organizationalRole
+cn: Manager
+description: Directory Manager
+
+dn: ou=People,dc=annmoon,dc=com
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=groups,dc=annmoon,dc=com
+objectClass: organizationalUnit
+ou: groups
+
+dn: cn=test,ou=groups,dc=annmoon,dc=com
+objectClass: top
+objectClass: posixGroup
+cn: test
+gidNumber: 200
+memberUid: testuser
+
+dn: cn=testuser,ou=People,dc=annmoon,dc=com
+objectClass: extensibleObject
+objectClass: shadowAccount
+objectClass: posixAccount
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: testuser
+gidNumber: 200
+homeDirectory: /home/testuser
+sn: testuser
+uid: testuser
+uidNumber: 2001
+email: testuser@annmoon.com
+gecos: testuser
+host: *
+loginShell: /bin/bash
+userPassword: {ssha}x
